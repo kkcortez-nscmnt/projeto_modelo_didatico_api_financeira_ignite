@@ -1,6 +1,6 @@
 ## Requisitos da API
 
-[] Deve ser possível criar uma conta.<br>
+[x] Deve ser possível criar uma conta.<br>
 [] Deve ser possível buscar o extrato bancário do cliente.<br>
 [] Deve ser possível realizar um depósito.<br>
 [] Deve ser possível realizar um saque.<br>
@@ -11,7 +11,7 @@
 
 ## Regras de negócio
 
-[] Não deve ser possível cadastrar uma conta com o cpf já existente.<br>
+[x] Não deve ser possível cadastrar uma conta com o cpf já existente.<br>
 [] Não deve ser possível fazer depósito em uma conta não existente.<br>
 [] Não deve ser possível buscar extrato em uma conta não existente.<br>
 [] Não deve ser possível excluir uma conta não existente.<br>
