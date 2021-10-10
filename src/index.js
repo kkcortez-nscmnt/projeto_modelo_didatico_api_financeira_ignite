@@ -20,8 +20,8 @@ function verifyIfExistsAccountCPF(request, response, next){
     return next()
 }
 
-app.post("/account",(request, response)=> {
-    const {cpf, name} =request.body
+app.post("/account",(request, response)=> { 
+    const {cpf, name} = request.body
 
     const customersAlreadyExists = customers.some(
         (customer) => customer.cpf === cpf
@@ -30,7 +30,6 @@ app.post("/account",(request, response)=> {
     if (customersAlreadyExists) {
         return response.status(400).json({ error: "Customer already exists!"})
     }
-    
 
     customers.push({
         cpf,
@@ -43,8 +42,22 @@ app.post("/account",(request, response)=> {
 
 app.get("/statement/",verifyIfExistsAccountCPF, (request, response)=>{
 
-    const { customer} = request
+    const {customer} = request
     return response.json(customer.statement)
 
+})
+
+app.post("/deposit", verifyIfExistsAccountCPF, (request, response) =>{
+    const {description, amount} = request.body
+    const { customer} = request
+
+    const statementOperation = {
+        description,
+        amount,
+        created_at : new Date(),
+        type: "Credit"
+    }
+    customer.statement.push(statementOperation)
+    return response.status(201).send()
 })
 app.listen(3333)
