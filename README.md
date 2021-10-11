@@ -3,7 +3,7 @@
 Projeto desenvolvido durante a primeira parte do Curso Ignite node.js da Rocketseat. Este projeto tem como finalidade simular didaticamente os conceitos usados nas construções de API financeiras profissionais utilizando o Node.
 <br> Foram usados vários conceitos de aplicação web: 
 * Criação de um servidor http com uso da biblioteca express.
-* Utilização da dependência de desenvolvimento *nodemon.
+* Utilização da dependência de desenvolvimento nodemon.
 * Construção de scrips de comandos no arquivo package.json.
 * Familiarização com as rotas express.
 * Utilização do software insomnia para testes do funcionamento das rotas.
